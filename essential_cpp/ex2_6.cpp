@@ -10,7 +10,7 @@ TODO
 elemType max(const elemType &a, const elemType &b){
 #endif
 template <typename elemType>
-elemType max(const elemType a, const elemType b){
+elemType my_max(const elemType &a, const elemType &b){
     if(a > b)
         return a;
     else
@@ -18,8 +18,8 @@ elemType max(const elemType a, const elemType b){
 }
 
 template <typename elemType>
-elemType max(const vector<elemType> &vec){
-    if(vec.size == 0){
+elemType my_max(const vector<elemType> &vec){
+    if(vec.size() == 0){
         cerr << "empty vector" << endl;
         return (elemType)0;
     }
@@ -31,7 +31,7 @@ elemType max(const vector<elemType> &vec){
 }
 
 template <typename elemType>
-elemType max(const elemType *arr, int size){
+elemType my_max(const elemType *arr, int size){
     if(size == 0){
         cerr << "empty vector" << endl;
         return (elemType)0;
@@ -44,9 +44,9 @@ elemType max(const elemType *arr, int size){
 }
 
 int main(){
-    cout << max(1, 5) << endl;
-    cout << max(1.231, 1.32) << endl;
-    cout << max(string("Tom"), string("Tim")) << endl;
+    cout << my_max(1, 5) << endl;
+    cout << my_max(1.231, 1.32) << endl;
+    cout << my_max(string("Tom"), string("Tim")) << endl;
 
     int iarr[] = {1, 3, 2, 5};
     double darr[] = {1.4, 1.3, 2.2, 1.5};
@@ -56,13 +56,13 @@ int main(){
     vector<double> dvec(darr, darr + 4);
     vector<string> svec(sarr, sarr + 3);
 
-    cout << max(ivec) << endl;
-    cout << max(dvec) << endl;
-    cout << max(svec) << endl;
+    cout << my_max(ivec) << endl;
+    cout << my_max(dvec) << endl;
+    cout << my_max(svec) << endl;
 
-    cout << max(iarr, 4) << endl;
-    cout << max(darr, 4) << endl;
-    cout << max(sarr, 3) << endl;
+    cout << my_max(iarr, 4) << endl;
+    cout << my_max(darr, 4) << endl;
+    cout << my_max(sarr, 3) << endl;
 
     return 0;
 }  
